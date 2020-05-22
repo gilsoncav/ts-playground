@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: { print: './src/print.ts', app: './src/index.ts' },
+  entry: { app: './src/index.ts' },
   module: {
     rules: [
       {
@@ -36,9 +36,10 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     contentBase: './dist',
+    hot: true,
   },
   output: {
-    filename: '[name].[contentHash].bundle.js',
+    filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
