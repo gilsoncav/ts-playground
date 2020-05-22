@@ -10,6 +10,13 @@
       "name": "Launch Chrome against localhost",
       "url": "http://127.0.0.1:5500/dist/index.html",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome webpack-web-server",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }

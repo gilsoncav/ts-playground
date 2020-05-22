@@ -24,7 +24,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'TS Playground',
     }),
@@ -34,6 +34,9 @@ module.exports = {
   },
   // In most cases the best equilibrium of performance and speed option for source maps
   devtool: 'eval-cheap-module-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   output: {
     filename: '[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
